@@ -6,11 +6,11 @@
 /*   By: asargsya <asargsya@student.42yerevan.am>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 12:02:53 by asargsya          #+#    #+#             */
-/*   Updated: 2024/04/16 13:31:57 by asargsya         ###   ########.fr       */
+/*   Updated: 2024/04/17 14:00:14 by asargsya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 int	ft_isdigit(char ch)
 {
@@ -19,7 +19,7 @@ int	ft_isdigit(char ch)
 
 int	error_exit(void)
 {
-	write(1, "Error\n", 5);
+	write(1, "Error\n", 6);
 	exit (1);
 }
 
