@@ -6,7 +6,7 @@
 /*   By: asargsya <asargsya@student.42yerevan.am>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 12:02:53 by asargsya          #+#    #+#             */
-/*   Updated: 2024/04/17 14:00:14 by asargsya         ###   ########.fr       */
+/*   Updated: 2024/04/22 16:22:05 by asargsya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,13 @@ int	error_exit(void)
 	exit (1);
 }
 
-int	ft_stacksize(t_stack *stack)
+int	ft_stacksize(t_stack **stack)
 {
 	int		size;
 	t_stack	*current;
 
 	size = 0;
-	current = stack;
+	current = *stack;
 	while (current != NULL)
 	{
 		size++;
@@ -38,11 +38,11 @@ int	ft_stacksize(t_stack *stack)
 	return (size);
 }
 
-int	ft_atoi(const char *str)
+int	ft_atoi_changed(const char *str)
 {
-	int	i;
-	int	sign;
-	int	answer;
+	int		i;
+	int		sign;
+	long	answer;
 
 	answer = 0;
 	sign = 1;
@@ -61,5 +61,5 @@ int	ft_atoi(const char *str)
 		answer = (answer * 10) + (str[i] - '0');
 		i++;
 	}
-	return (sign * answer);
+	return ((sign * answer) < 2147483647 || (sign * answer) > 	-2147483648);
 }

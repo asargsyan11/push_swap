@@ -6,7 +6,7 @@
 /*   By: asargsya <asargsya@student.42yerevan.am>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 13:25:00 by asargsya          #+#    #+#             */
-/*   Updated: 2024/04/17 15:17:19 by asargsya         ###   ########.fr       */
+/*   Updated: 2024/04/22 16:14:04 by asargsya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,10 @@
 
 typedef struct s_stack
 {
-	int				data;
+	long			data;
+	long			index;
+
+	struct s_stack	*prev;
 	struct s_stack	*next;
 }	t_stack;
 
@@ -31,8 +34,19 @@ int		error_exit(void);
 //utilities
 int		is_digit(char ch);
 int		ft_atoi(const char *str);
-char	**ft_split(const char *str, char ch);
 int		ft_stacksize(t_stack **stack);
+char	**ft_split(const char *str, char ch);
+
 //operations
+void	sa_sb(t_stack **stack, int flag);
+void	ss(t_stack **a, t_stack **b);
+void	pa(t_stack **a, t_stack **b);
+void	pb(t_stack **a, t_stack **b);
+void	ra_rb(t_stack **stack ,int flag);
+void	rr(t_stack **a, t_stack **b);
+void	rra_rrb(t_stack **stack, int flag);
+void	rrr(t_stack **a, t_stack **b);
+
+
 
 #endif

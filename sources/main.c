@@ -7,7 +7,7 @@ void    sa_sb(t_stack **stack, int flag)
     t_stack *second;
     int    temp;
 
-	if (ft_stacksize < 2)
+	if (ft_stacksize(stack) < 2)
 		return ;
     top = *stack;
     second = top->next;
@@ -26,7 +26,7 @@ void    ss(t_stack **a, t_stack **b)
     sa_sb(b, 3);
     write(1, "ss\n", 3);
 }
-
+/*
 void    pa_pb(t_stack **first, t_stack **second, int flag)
 {
     t_stack *temp;
@@ -35,16 +35,51 @@ void    pa_pb(t_stack **first, t_stack **second, int flag)
 
 	if (!first || !(*first))
 		return ;
-    top_1 = *first;
-    top_2 = *second;
+    top_1 = *second;
+    top_2 = *first;
     temp = top_1->next;
     top_1->next = top_2;
-    *first = temp;
-    *second = top_1;
+    *second = temp;
+    *first = top_1;
     if(flag == 1)
-   	 write(1, "pb\n", 3);
-    else if (flag == 2)
    	 write(1, "pa\n", 3);
+    else if (flag == 2)
+   	 write(1, "pb\n", 3);
+}
+*/
+
+void	pa(t_stack **a, t_stack **b)
+{
+	t_stack *top_a;
+	t_stack *top_b;
+	t_stack	*temp;
+
+	if (!(*b))
+		return ;
+	top_a = *a;
+	top_b = *b;
+	temp = top_b->next;
+	*b = temp;
+	top_b->next = top_a;
+	*a = top_b;
+	write(1, "pa\n", 3);
+}
+
+void	pb(t_stack **a, t_stack **b)
+{
+	t_stack *top_a;
+	t_stack	*top_b;
+	t_stack *temp;
+
+	if (!(*a))
+		return ;
+	top_a = *a;
+	top_b = *b;
+	temp = top_a->next;
+	*a = temp;
+	top_a->next = top_b;
+	*b = top_a;
+	write(1, "pb\n", 3);
 }
 
 void    ra_rb(t_stack **stack, int flag)
@@ -153,13 +188,16 @@ int main(void)
     //sa_sb(&head_a, 1);
     //sa_sb(&head_b, 2);
     //ss(&head_a, &head_b);
-    //pa_pb(&head_b,&head_a,2);
+    //pa_pb(&head_a,&head_b,1);
     //pa_pb(&head_b,&head_a,2);    
     //ra_rb(&head_a, 1);
 	//ra_rb(&head_b, 2);
    	//rr(&head_a, &head_b);
 	//rra_rrb(&head_a, 1);
-	rrr(&head_a, &head_b);
+	///rrr(&head_a, &head_b);
+	//pa(&head_a, &head_b);
+	pa(&head_a, &head_b);
+
     //display a
     t_stack *curr_a;
     curr_a = head_a;

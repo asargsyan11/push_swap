@@ -6,7 +6,7 @@
 /*   By: asargsya <asargsya@student.42yerevan.am>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 14:32:11 by asargsya          #+#    #+#             */
-/*   Updated: 2024/04/22 13:40:44 by asargsya         ###   ########.fr       */
+/*   Updated: 2024/04/22 16:05:58 by asargsya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,22 +38,36 @@ void	ss(t_stack **a, t_stack **b)
 	write(1, "ss\n", 3);
 }
 
-void	pa_pb(t_stack **first, t_stack **second, int flag)
+void	pa(t_stack **a, t_stack **b)
 {
+	t_stack	*top_a;
+	t_stack	*top_b;
 	t_stack	*temp;
-	t_stack	*top_1;
-	t_stack	*top_2;
 
-	if (!first || !(*first))
+	if (!(*b))
 		return ;
-	top_1 = *first;
-	top_2 = *second;
-	temp = top_1->next;
-	top_1->next = top_2;
-	*first = temp;
-	*second = top_1;
-	if (flag == 1)
-		write(1, "pb\n", 3);
-	else if (flag == 2)
-		write(1, "pa\n", 3);
+	top_a = *a;
+	top_b = *b;
+	temp = top_b->next;
+	*b = temp;
+	top_b->next = top_a;
+	*a = top_b;
+	write(1, "pa\n", 3);
+}
+
+void	pb(t_stack **a, t_stack **b)
+{
+	t_stack	*top_a;
+	t_stack	*top_b;
+	t_stack	*temp;
+
+	if (!(*a))
+		return ;
+	top_a = *a;
+	top_b = *b;
+	temp = top_a->next;
+	*a = temp;
+	top_a->next = top_b;
+	*b = top_a;
+	write(1, "pb\n", 3);
 }
