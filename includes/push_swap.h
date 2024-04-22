@@ -32,7 +32,7 @@ int		error_exit(void);
 int		is_digit(char ch);
 int		ft_atoi(const char *str);
 char	**ft_split(const char *str, char ch);
-
+int		ft_stacksize(t_stack **stack);
 //operations
 
 #endif

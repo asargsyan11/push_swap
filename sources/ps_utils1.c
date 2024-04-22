@@ -23,6 +23,21 @@ int	error_exit(void)
 	exit (1);
 }
 
+int	ft_stacksize(t_stack *stack)
+{
+	int		size;
+	t_stack	*current;
+
+	size = 0;
+	current = stack;
+	while (current != NULL)
+	{
+		size++;
+		current = current->next;
+	}
+	return (size);
+}
+
 int	ft_atoi(const char *str)
 {
 	int	i;
