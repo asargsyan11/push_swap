@@ -12,15 +12,14 @@
 
 #include "push_swap.h"
 
-t_stack *pre_processing_arguments(int argc, char **argv)
-{
-	//if argv > 2 we do atoi and create a new node and add it to the existing one
-}
-
 int	main(int argc, char **argv)
-{
-	t_stack *a;
-	a = pre_processing_arguments(argc, argv);
+{ 
+	t_stack	*a;
+	//a = pre_processing_arguments(argc, argv);
+	
+	if (argc > 2)
+	{
 
+	}
 	return (0);
 }

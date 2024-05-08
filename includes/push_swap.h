@@ -19,11 +19,11 @@
 
 typedef struct s_stack
 {
-	long			data;
-	long			index;
+	int			data;
+	int			index;
 
-	struct s_stack	*prev;
 	struct s_stack	*next;
+	struct s_stack	*prev;
 }	t_stack;
 
 //validation
@@ -33,7 +33,7 @@ int		error_exit(void);
 
 //utilities
 int		is_digit(char ch);
-int		ft_atoi(const char *str);
+int		ft_atoi_changed(const char *str);
 int		ft_stacksize(t_stack **stack);
 char	**ft_split(const char *str, char ch);
 
@@ -47,6 +47,11 @@ void	rr(t_stack **a, t_stack **b);
 void	rra_rrb(t_stack **stack, int flag);
 void	rrr(t_stack **a, t_stack **b);
 
-
+//stack utils
+t_stack	*new_node(int data);
+t_stack	*last_node(t_stack **stack);
+t_stack *add_end(t_stack **stack, int data);
+int		stack_min(t_stack **stack);
+int		stack_max(t_stack **stack);
 
 #endif

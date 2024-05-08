@@ -44,10 +44,10 @@ int	is_double(char **arguments)
 	while (arguments[index_r])
 	{
 		index_r2 = index_r + 1;
-		num1 = ft_atoi(arguments[index_r]);
+		num1 = ft_atoi_changed(arguments[index_r]);
 		while (arguments[index_r2])
 		{
-			num2 = ft_atoi(arguments[index_r2]);
+			num2 = ft_atoi_changed(arguments[index_r2]);
 			if (num1 == num2)
 				error_exit();
 			index_r2++;
