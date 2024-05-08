@@ -13,56 +13,49 @@
 //min
 int stack_min(t_stack **stack)
 {
-    int     index;
-    int     min;
     t_stack *temp;
-    
-    index = 0;
-    min = 0;
+    int     min;
+
     temp = *stack;
-    if (*stack == NULL || stack == NULL)
-        error_exit();
-    while(temp)
-    {
-        if (min >= temp->data)
-            min = temp-data;
-        temp = temp->next;    
-    }
-    temp = *stack;
+    min = temp->data;
+    temp = temp->next;
     while (temp)
     {
-        if(temp->data == min)
-            index = temp->index;
+        if  (temp->data <= min)
+            min = temp->data;
         temp = temp->next;
     }
-    return(index);
+    return (min)
 }
 
 //max
 int stack_max(t_stack **stack)
 {
-    int     index;
-    int     max;
     t_stack *temp;
-    
-    index = 0;
-    max = 0;
+    int     max;
+
     temp = *stack;
-    if (*stack == NULL || stack == NULL)
-        error_exit();
-    while(temp)
-    {
-        if (max <= temp->data)
-            max = temp-data;
-        temp = temp->next;    
-    }
-    temp = *stack;
+    max = temp->data;
+    temp = temp->next;
     while (temp)
     {
-        if(temp->data == max)
-            index = temp->index;
+        if  (temp->data <= max)
+            max = temp->data;
         temp = temp->next;
     }
-    return(index);
+    return (max)
 }
 
+int check_sorted(t_stack **stack)
+{
+    t_stack *temp;
+
+    temp = *stack;
+    while(temp)
+    {
+        if (temp->data > temp->next->data)
+            return (0)
+        temp = temp->next;
+    }
+    return (1);
+}

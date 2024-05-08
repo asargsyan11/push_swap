@@ -1,19 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   sort_fixed.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asargsya <asargsya@student.42yerevan.am>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/16 11:57:04 by asargsya          #+#    #+#             */
-/*   Updated: 2024/04/22 16:23:55 by asargsya         ###   ########.fr       */
+/*   Created: 2024/05/08 16:33:57 by asargsya          #+#    #+#             */
+/*   Updated: 2024/05/08 16:33:59 by asargsya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+void    sort_two(t_stack **a)
+{
+    t_stack *curr;
 
-int	main(int argc, char **argv)
-{ 
+    curr = *a;
+    if (curr->data > curr->next->data)
+    {
+        sa_sb(a, 1);
+    }
+}
 
-	return (0);
+void    sort_three(t_stack **a)
+{
+    t_stack *first_node;
+    t_stack *second_node;
+
+    first_node = *a;
+    second_node = first_node->next;
+    if ()
 }

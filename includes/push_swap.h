@@ -31,6 +31,12 @@ int		is_valid(char *arguments);
 int		is_double(char **arguments);
 int		error_exit(void);
 
+//parsing
+void	free_mem(char **mem);
+void	args_to_stack(char **argv, t_stack **stack);
+t_stack	*parse_two(char **argv);
+t_stack	*parsing(int argc, char **argv);
+
 //utilities
 int		is_digit(char ch);
 int		ft_atoi_changed(const char *str);
@@ -53,5 +59,5 @@ t_stack	*last_node(t_stack **stack);
 t_stack *add_end(t_stack **stack, int data);
 int		stack_min(t_stack **stack);
 int		stack_max(t_stack **stack);
-
+int		check_sorted(t_stack **stack);
 #endif
